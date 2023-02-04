@@ -26,6 +26,14 @@ namespace cs1_countries_api.Data
                 new EuropeModel { Id = 1, Name = "Romania", CapitalCity = "Bucharest", Currency = "Lei", TotalArea = 238400, Language = "Romanian", Population = 19120000, CityPopulation = 1830000 },
                 new EuropeModel { Id = 1, Name = "Ukraine", CapitalCity = "Kyjev", Currency = "Hryvnia", TotalArea = 603700, Language = "Ukrainian", Population = 43790000, CityPopulation = 3223000 }
                 );
+
+            // AMERICA 
+            modelBuilder.Entity<AmericaModel>().HasData(
+                new EuropeModel { Id = 1, Name = "new york", CapitalCity = "new york city", Currency = "Dollar", TotalArea = 141300, Language = "English", Population = 19680000, CityPopulation = 8467513 },
+                new EuropeModel { Id = 1, Name = "california", CapitalCity = "Sacramento", Currency = "Dollar", TotalArea = 423970, Language = "English", Population = 39240000, CityPopulation = 525041 },
+                new EuropeModel { Id = 1, Name = "illinois", CapitalCity = "Chicago", Currency = "Dollar", TotalArea = 149998, Language = "English", Population = 12580000, CityPopulation = 2696555 },
+                new EuropeModel { Id = 1, Name = "texas", CapitalCity = "Austin", Currency = "Dollar", TotalArea = 695662, Language = "English", Population = 29530000, CityPopulation = 2176000 }
+                );
         }
 
         public DbSet<EuropeModel> EuropeCountries { get; set; }
