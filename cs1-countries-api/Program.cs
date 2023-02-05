@@ -19,6 +19,12 @@ namespace cs1_countries_api
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
 
+            builder.Services.AddCors(options => {
+                options.AddPolicy(name: "AllowOrigin", policy => { 
+                    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                } );
+            });
+
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -33,10 +39,11 @@ namespace cs1_countries_api
                 app.UseSwaggerUI();
             }
 
+            app.UseCors("AllowOrigin");
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
